@@ -8,27 +8,31 @@ int sqrtN(long long int N)
     {
         return N;
     }
-    long long int s,e,mid;
-    s=0;
-    e=N/2;
+    long long int s,e,mid,ans=-1;
+    s=1;
+    e=N;
+    while(s<=e){
     mid=s+(e-s)/2;
-    while(s<e){
+        // cout<<s<<" "<<e<<" "<<mid<<endl;
         if(mid*mid>N){
-            e=mid;
+            e=mid-1;
         }
         else if(mid*mid<N){
-            s=mid;
+            ans=mid;
+            s=mid+1;
+
         }
         else if(mid*mid==N){
             return mid;
         }
+        // mid=s+(e-s)/2;
     }
-    return e;
+    return ans;
     
     // Write your code here.
 }
 
 int main()
 {
-    cout<<sqrtN(1);
+    cout<<sqrtN(604937061729);
 }
