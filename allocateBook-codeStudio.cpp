@@ -48,5 +48,6 @@ int allocateBooks(vector<int> arr, int n, int m) {
 }
 
 int main(){
-
+vector<int> v ={10,20,30,40};
+cout<<allocateBooks(v,4,2);
 }
