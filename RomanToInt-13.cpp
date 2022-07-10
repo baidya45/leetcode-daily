@@ -40,14 +40,12 @@ int romanToInt(string s)
         }
     }
     for(i=0;i<len-1;i++){
-        cout<<val[i]<<" ";
         if(val[i]<val[i+1]){
             sum-=val[i];
         }
         else{
             sum+=val[i];
         }
-        cout<<"sum is "<<sum<<" ";
     }
 
     return sum+val[len-1];
