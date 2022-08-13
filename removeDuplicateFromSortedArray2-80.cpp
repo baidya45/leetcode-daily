@@ -50,3 +50,25 @@ int removeDuplicates(vector<int> &nums)
 int main()
 {
 }
+
+
+
+int removeDuplicates2(vector<int>& nums) {
+        int cnt=0;
+        int flag=0;
+        int k=2;
+        for(int i=1;i<nums.size();i++)
+        {
+            if(nums[i]==nums[i-1])
+            {
+                flag++;
+                if(flag>=k)
+                    cnt++;
+            }
+            else
+                flag=0;
+            nums[i-cnt]=nums[i];
+        }
+        return nums.size()-cnt;
+    
+    }
